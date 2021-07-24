@@ -1,5 +1,30 @@
-# Rules in this file were initially inferred by Visual Studio IntelliCode from the C:\Repos\Mine\SpiderConsole codebase based on best match to current usage at 7/22/2021
-# You can modify the rules from these initially generated values to suit your own policies
-# You can learn more about editorconfig here: https://docs.microsoft.com/en-us/visualstudio/ide/editorconfig-code-style-settings-reference
+﻿root = true
+
 [*.cs]
 
+# Set enabled analyzers defaults
+dotnet_analyzer_diagnostic.severity = suggestion
+dotnet_analyzer_diagnostic.category-Performance.severity = error
+dotnet_analyzer_diagnostic.category-Reliability.severity = error
+dotnet_analyzer_diagnostic.category-Security.severity = error
+
+# IDE0008: 'var' preferences
+csharp_style_var_for_built_in_types = false
+csharp_style_var_when_type_is_apparent = false
+csharp_style_var_elsewhere = false
+
+# IDE0022: Use expression body for methods
+# Prefer expression bodies for methods
+csharp_style_expression_bodied_methods = true
+
+# IDE0055: Fix formatting (various)
+dotnet_sort_system_directives_first = true
+dotnet_separate_import_directive_groups = true
+csharp_using_directive_placement = outside_namespace
+
+# IDE0090: Simplify new expression
+# Prefer type inclusion
+csharp_style_implicit_object_creation_when_type_is_apparent = false
+
+# IDE0130: Namespace does not match folder structure
+dotnet_diagnostic.IDE0130.severity = silent
